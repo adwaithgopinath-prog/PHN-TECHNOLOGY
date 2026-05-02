@@ -1,0 +1,33 @@
+[0] (500,500)<div  />
+	[1] (500,500)<div class='popup-card' role='dialog' />
+		[2] (878,9)<button aria-label='Close popup' class='popup-close' />
+		P
+		PHN TECHNOLOGY
+		Join PHN’s Guaranteed
+		JOB TRAINING PROGRAM
+		Are you looking for a job?
+		100% GUARANTEE
+		“First get job confirmation with an offer letter, then pay the fees.”
+		“पहले जॉब कन्फर्मेशन और ऑफर लेटर पाएं, फिर फीस जमा करें।”
+		“Your career deserves a strong beginning”
+		[3] (326,832)<a class='apply-btn' href='https://www.phntechnology.com'>Limited Seats - Apply Now! />
+		[4] (223,947)<a class='phone-link' href='tel:+918412841200' />
+			[5] (236,947)<span >+91 8412 8412 00 />
+		WhatsApp Chat
+		ELIGIBILITY
+		12th Pass
+		Any Graduate
+		B.Ed / D.Ed
+		PHN Technology, Pune
+		www.phntechnology.com
+P
+PHN TECHNOLOGY
+Services
+Our Company
+Media
+PHN Skillhub
+New
+Programs
+Career
+Contact us
+KNOW MORE

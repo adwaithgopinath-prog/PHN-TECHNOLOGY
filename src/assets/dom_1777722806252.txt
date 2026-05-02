@@ -1,0 +1,36 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+P
+PHN TECHNOLOGY
+[0] (202,55)<button class='nav-link'>Services />
+[1] (300,55)<button class='nav-link'>Our Company />
+[2] (332,142)<a class='dropdown-item' href='#'>About Us />
+[3] (332,221)<a class='dropdown-item' href='#'>Partners & Collaborations />
+[4] (332,300)<a class='dropdown-item' href='#'>Advisory Board />
+[5] (393,55)<button class='nav-link'>Media />
+[6] (491,55)<button class='nav-link'>PHN Skillhub />
+	[7] (515,55)<span >New />
+[8] (589,55)<button class='nav-link'>Programs />
+[9] (666,55)<button class='nav-link'>Career />
+[10] (738,55)<button class='nav-link'>Contact us />
+[11] (921,55)<a href='#' />
+[12] (956,55)<a href='#' />
+[13] (991,55)<a href='#' />
+[14] (108,494)<div  />
+	[15] (108,494)<img  />
+WSS Awards 2025: PHN Technology Leader Recognized for Vision and Excellence
+Recognizing Talent: Mr. Pradip Narayankar, Founder & CEO of PHN Technology, received the “Outstanding Entrepreneur in Education & Innovation” award at the World School Summit 2025, Bangkok.
+Inspiring Innovation: Honored for transforming education through technology and elevating Indian innovation globally.
+[16] (642,625)<button class='read-more-btn'>READ MORE />
+[17] (391,760)<button class='slider-arrow prev' />
+[18] (450,760)<div  />
+[19] (478,760)<div  />
+[20] (498,760)<div  />
+[21] (518,760)<div  />
+[22] (537,760)<div  />
+[23] (557,760)<div  />
+[24] (610,760)<button class='slider-arrow next' />
+
+</current_dom>
