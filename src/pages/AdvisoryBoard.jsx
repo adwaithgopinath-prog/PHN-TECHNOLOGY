@@ -30,12 +30,12 @@ const AdvisoryBoardPage = () => {
 
   return (
     <div className="advisory-page-container">
-      <div className="advisory-hero">
-        <div className="container">
+      <div className="advisory-hero section-full bg-deep">
+        <div className="container-premium">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="advisory-title"
+            className="hero-title-global"
           >
             Advisory Board
           </motion.h1>
@@ -50,7 +50,7 @@ const AdvisoryBoardPage = () => {
         </div>
       </div>
 
-      <div className="container py-12">
+      <div className="container-premium py-section">
         {/* Filter Tabs */}
         <div className="advisory-filters">
           {categories.map((cat) => (
@@ -78,8 +78,8 @@ const AdvisoryBoardPage = () => {
             {filteredData.map((section) => (
               <div key={section.id} className="category-section">
                 <div className="category-header">
-                  <h2 className="category-title">{section.title}</h2>
-                  <p className="category-desc">{section.description}</p>
+                  <h2 className="section-title-global">{section.title}</h2>
+                  <p className="category-desc body-text-global">{section.description}</p>
                 </div>
                 
                 <div className="member-grid">

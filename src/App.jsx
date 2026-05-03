@@ -5,7 +5,15 @@ import { ChevronDown, ChevronLeft, ChevronRight, ArrowRight, ArrowUp, Menu, X, U
 import JobTrainingPopup from './components/JobTrainingPopup';
 import AdvisoryBoardPage from './pages/AdvisoryBoard';
 import SchoolSolution from './pages/SchoolSolution';
+import CollegeSolution from './pages/CollegeSolution';
+import RoboticsDevelopment from './pages/RoboticsDevelopment';
+import ITDevelopment from './pages/ITDevelopment';
+import Products from './pages/Products';
+import AboutUs from './pages/AboutUs';
+import Partners from './pages/Partners';
+import PartnersSection from './components/PartnersSection';
 import { advisoryBoardData } from './data/advisoryBoard';
+import './GlobalDesign.css';
 
 // Custom SVG Icons
 const FacebookIcon = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>;
@@ -49,96 +57,92 @@ const latestNewsData = [
   {
     id: 1,
     date: 'July 5, 2025',
-    title: 'WSS Awards 2025: PHN Technology Leader Recognized for Vision and Excellence',
-    description: [
-      'Recognizing Talent: Mr. Pradip Narayankar, Founder & CEO of PHN Technology, received the “Outstanding Entrepreneur in Education & Innovation” award at the World School Summit 2025, Bangkok.',
-      'Inspiring Innovation: Honored for transforming education through technology and elevating Indian innovation globally.'
+    title: 'WSS Awards 2025: PHN Technology Leader Recognized for Excellence',
+    highlights: [
+      { label: 'Recognizing Talent', desc: 'Mr. Pradip Narayankar honored for transforming education.' },
+      { label: 'Inspiring Innovation', desc: 'Recognized for elevating Indian innovation globally.' }
     ],
     image: './src/assets/news-wss.png',
     thumbnails: ['./src/assets/news-wss.png'],
     category: 'Latest News',
     badge: 'LATEST',
-    isVideo: false
+    isVideo: false,
+    label: 'Award Moment'
   },
   {
     id: 2,
     date: 'March 17, 2025',
-    title: 'PHN CoE Lab Inaugurated at IIT Guwahati: Empowering Innovation and Practical Excellence',
-    description: [
-      'State-of-the-Art Lab: PHN Technology launches Robotics, AI, IoT hub at IIT Guwahati.',
-      'Hands-On Revolution: Sparks practical learning for cutting-edge tech skills.',
-      'Innovation Showcase: Lab tour unveils advanced tools for future innovators.',
-      'Empowering Talent: Builds industry-ready expertise for students.'
+    title: 'PHN CoE Lab Inaugurated at IIT Guwahati: Empowering Innovation',
+    highlights: [
+      { label: 'State-of-the-Art', desc: 'PHN launches Robotics, AI, IoT hub at IIT Guwahati.' },
+      { label: 'Empowering Talent', desc: 'Building industry-ready expertise for students.' }
     ],
     image: './src/assets/news-guwahati.png',
     thumbnails: ['./src/assets/news-guwahati.png'],
     category: 'Latest News',
     badge: 'LATEST',
-    isVideo: true
+    isVideo: true,
+    label: 'Featured Story'
   },
   {
     id: 3,
     date: 'Feb 19, 2025',
     title: 'Shaping Tomorrow: Inauguration of PHN CoE Lab at IIT Jammu',
-    description: [
-      'Tech Hub Launched: PHN Technology opens Robotics, AI, IoT lab at IIT Jammu.',
-      'Skill-Building Focus: Drives hands-on training for next-gen innovators.',
-      'Cutting-Edge Tour: Expert talks highlight advanced lab facilities.',
-      'Industry Synergy: Fosters academia-industry collaboration for progress.'
+    highlights: [
+      { label: 'Tech Hub Launched', desc: 'PHN opens Robotics, AI, IoT lab at IIT Jammu.' },
+      { label: 'Skill-Building', desc: 'Drives hands-on training for next-gen innovators.' }
     ],
     image: './src/assets/news-jammu.png',
     thumbnails: ['./src/assets/news-jammu.png'],
     category: 'Latest News',
     badge: 'LATEST',
-    isVideo: true
+    isVideo: true,
+    label: 'Featured Story'
   },
   {
     id: 4,
     date: 'January 21, 2025',
     title: 'Advancing Education: PHN CoE Lab Inaugurated at NIT Delhi',
-    description: [
-      'Innovative Lab: PHN Technology launches Robotics, AI, IoT center at NIT Delhi.',
-      'Dynamic Learning: Fuels practical education for tech pioneers.',
-      'Tech Showcase: Guided tours reveal state-of-the-art facilities.',
-      'Future-Ready Skills: Bridges academia and industry for student success.'
+    highlights: [
+      { label: 'Innovative Lab', desc: 'Robotics, AI, IoT center fuels practical education.' },
+      { label: 'Future-Ready', desc: 'Bridges academia and industry for student success.' }
     ],
     image: './src/assets/news-delhi.png',
     thumbnails: ['./src/assets/news-delhi.png'],
     category: 'Latest News',
     badge: 'LATEST',
-    isVideo: true
+    isVideo: true,
+    label: 'Featured Story'
   },
   {
     id: 5,
     date: '22 December, 2024',
     title: 'Pioneering the Future: Inauguration of PHN CoE Lab at IIT Patna',
-    description: [
-      'Tech Hub Unveiled: PHN Technology launches Robotics, AI, IoT lab at IIT Patna.',
-      'Hands-On Innovation: Empowers students with practical tech skills.',
-      'Visionary Lab: Tour and talks showcase cutting-edge infrastructure.',
-      'Collaborative Future: Strengthens industry-academia innovation.'
+    highlights: [
+      { label: 'Tech Hub Unveiled', desc: 'Launching Robotics, AI, IoT lab at IIT Patna.' },
+      { label: 'Visionary Lab', desc: 'Showcasing cutting-edge infrastructure and talks.' }
     ],
     image: './src/assets/news-patna.png',
     thumbnails: ['./src/assets/news-patna.png'],
     category: 'Latest News',
     badge: 'LATEST',
-    isVideo: true
+    isVideo: true,
+    label: 'Featured Story'
   },
   {
     id: 6,
     date: '06 February, 2025',
     title: 'Empowering Innovation: Inauguration of PHN CoE Lab at IIIT Vadodara',
-    description: [
-      'Advanced Lab Launched: PHN Technology opens Robotics, AI, IoT hub at IIIT Vadodara.',
-      'Tech Trailblazers: Fuels hands-on learning for future innovators.',
-      'Inspiring Showcase: Lab tour and discussions highlight innovation.',
-      'Industry-Academia Link: Drives collaboration for cutting-edge tech.'
+    highlights: [
+      { label: 'Advanced Launch', desc: 'New hub for Robotics and AI at IIIT Vadodara.' },
+      { label: 'Industry Link', desc: 'Drives collaboration for cutting-edge technologies.' }
     ],
     image: './src/assets/news-vadodara.png',
     thumbnails: ['./src/assets/news-vadodara.png'],
     category: 'Latest News',
     badge: 'LATEST',
-    isVideo: true
+    isVideo: true,
+    label: 'Featured Story'
   }
 ];
 
@@ -195,14 +199,14 @@ const UpcomingEvents = () => {
 
   if (upcomingEventsData.length === 0) {
     return (
-      <div className="empty-state">
+      <div className="empty-state container-premium">
         <p>No upcoming events currently. Check back soon for PHN’s next innovation launch.</p>
       </div>
     );
   }
 
   return (
-    <div className="upcoming-events-list">
+    <div className="upcoming-events-list container-premium">
       {upcomingEventsData.map((event) => (
         <motion.div 
           key={event.id} 
@@ -302,21 +306,18 @@ const NewsShowcase = () => {
 
   const slideVariants = {
     enter: (direction) => ({
-      x: direction > 0 ? 500 : -500,
+      x: direction > 0 ? 300 : -300,
       opacity: 0,
-      scale: 0.95
     }),
     center: {
       zIndex: 1,
       x: 0,
       opacity: 1,
-      scale: 1
     },
     exit: (direction) => ({
       zIndex: 0,
-      x: direction < 0 ? 500 : -500,
+      x: direction < 0 ? 300 : -300,
       opacity: 0,
-      scale: 0.95
     })
   };
 
@@ -333,7 +334,7 @@ const NewsShowcase = () => {
   const activeNews = latestNewsData[currentIndex];
 
   return (
-    <div className="news-showcase-container">
+    <div className="latest-news-wrapper">
       <AnimatePresence initial={false} custom={direction} mode="wait">
         <motion.div
           key={currentIndex}
@@ -346,68 +347,64 @@ const NewsShowcase = () => {
             x: { type: "spring", stiffness: 300, damping: 30 },
             opacity: { duration: 0.3 }
           }}
-          className="news-slide"
+          className="latest-news-card"
         >
-          <div className="news-media-side">
-            <div className="main-image-wrapper">
-              <img src={activeNews.image} alt={activeNews.title} className="news-main-img" />
-              {activeNews.isVideo && (
-                <div className="play-button-overlay">
-                  <div className="play-icon"></div>
-                </div>
-              )}
-              <div className="media-glow"></div>
-            </div>
-            <div className="thumbnail-collage">
-              {activeNews.thumbnails.map((thumb, idx) => (
-                <div key={idx} className={`thumb-item ${idx === 0 ? 'active' : ''}`}>
-                  <img src={thumb} alt="Thumbnail" />
-                </div>
-              ))}
-            </div>
+          <div className="latest-news-media">
+            <img src={activeNews.image} alt={activeNews.title} />
+            <div className="media-overlay-gradient"></div>
+            <div className="media-label-badge">{activeNews.label}</div>
+            {activeNews.isVideo && (
+              <div className="play-btn-circle">
+                <div className="play-icon-inner"></div>
+              </div>
+            )}
           </div>
 
-          <div className="news-content-side">
-            <div className="news-header-meta">
-              <span className="news-badge">{activeNews.badge}</span>
-              <span className="news-date">{activeNews.date}</span>
+          <div className="latest-news-content">
+            <div className="content-top-row">
+              <span className="premium-badge-latest">{activeNews.badge}</span>
+              <span className="content-date-line">{activeNews.date}</span>
             </div>
-            <h2 className="news-title-large">{activeNews.title}</h2>
-            <div className="news-bullet-points">
-              {activeNews.description.map((point, idx) => (
-                <div key={idx} className="bullet-point">
-                  <div className="bullet-dot"></div>
-                  <p>{point}</p>
+            
+            <h2 className="latest-news-title">{activeNews.title}</h2>
+
+            <div className="latest-news-highlights">
+              {activeNews.highlights.slice(0, 2).map((item, idx) => (
+                <div key={idx} className="highlight-row-card">
+                  <div className="highlight-dot-gold"></div>
+                  <div className="highlight-text-box">
+                    <span className="highlight-label">{item.label}</span>
+                    <p className="highlight-desc limit-lines">{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
-            <button className="read-more-btn" onClick={() => setSelectedNews(activeNews)}>
-              READ MORE <ArrowRight size={18} />
-            </button>
+
+            <div className="content-footer-actions">
+              <button className="read-more-btn-v2" onClick={() => setSelectedNews(activeNews)}>
+                READ MORE <ArrowRight size={18} />
+              </button>
+
+              <div className="carousel-nav-controls">
+                <button className="nav-arrow-v2 prev" onClick={prevSlide}><ChevronLeft size={20} /></button>
+                <div className="nav-dots-v2">
+                  {latestNewsData.map((_, idx) => (
+                    <div 
+                      key={idx} 
+                      className={`nav-dot-v2 ${idx === currentIndex ? 'active' : ''}`}
+                      onClick={() => {
+                        setDirection(idx > currentIndex ? 1 : -1);
+                        setCurrentIndex(idx);
+                      }}
+                    ></div>
+                  ))}
+                </div>
+                <button className="nav-arrow-v2 next" onClick={nextSlide}><ChevronRight size={20} /></button>
+              </div>
+            </div>
           </div>
         </motion.div>
       </AnimatePresence>
-
-      <div className="slider-controls">
-        <button className="slider-arrow prev" onClick={prevSlide}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <div className="slider-dots">
-          {latestNewsData.map((_, idx) => (
-            <div 
-              key={idx} 
-              className={`dot ${idx === currentIndex ? 'active' : ''}`}
-              onClick={() => {
-                setDirection(idx > currentIndex ? 1 : -1);
-                setCurrentIndex(idx);
-              }}
-            ></div>
-          ))}
-        </div>
-        <button className="slider-arrow next" onClick={nextSlide}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-      </div>
 
       <AnimatePresence>
         {selectedNews && (
@@ -446,9 +443,9 @@ const NewsModal = ({ news, onClose }) => {
             </div>
             <h2 className="modal-title">{news.title}</h2>
             <div className="modal-divider"></div>
-            <div className="news-full-desc">
-              {news.description.map((p, i) => (
-                <p key={i} style={{ marginBottom: '1rem' }}>{p}</p>
+            <div className="news-full-desc body-text-global">
+              {news.highlights.map((h, i) => (
+                <p key={i} style={{ marginBottom: '1rem' }}><strong>{h.label}:</strong> {h.desc}</p>
               ))}
               <p>PHN Technology continues to lead the way in technical education and industrial innovation through strategic partnerships and world-class laboratory facilities across India's premier institutions.</p>
             </div>
@@ -490,8 +487,8 @@ const ImpactSection = () => {
   ];
 
   return (
-    <section className="py-24 impact-section-premium" style={{ perspective: '1200px' }}>
-      <div className="container">
+    <section className="section-full impact-section-premium bg-alt" style={{ perspective: '1200px' }}>
+      <div className="container-premium">
         <motion.div 
           className="impact-glass-panel"
           onMouseMove={handleMouseMove}
@@ -574,8 +571,8 @@ const AdvisoryBoardPreview = () => {
     : allMembers.filter(m => m.category === activeCategory);
 
   return (
-    <section className="advisory-preview-section">
-      <div className="container">
+    <section className="advisory-preview-section section-full bg-deep">
+      <div className="container-premium">
         <div className="preview-header">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -669,10 +666,6 @@ const HomePage = ({ partnersVisible, handleKnowMore, activeTab, setActiveTab }) 
     <>
       {/* Hero Section */}
       <section className="hero-container">
-        <div className="hero-floating-objects">
-          <div className="hero-float-obj hero-float-1"></div>
-          <div className="hero-float-obj hero-float-2"></div>
-        </div>
         <div className="hero-video-wrapper">
           <iframe
             src={`https://www.youtube.com/embed/7g8hTFcW-4A?autoplay=1&mute=1&loop=1&playlist=7g8hTFcW-4A&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`}
@@ -683,15 +676,22 @@ const HomePage = ({ partnersVisible, handleKnowMore, activeTab, setActiveTab }) 
         </div>
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <a href="#partners" id="know-more-button" className="btn" onClick={handleKnowMore}>
-            KNOW MORE <ArrowRight size={20} />
-          </a>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+
+            <a href="#updates" id="know-more-button" className="btn-gold" onClick={handleKnowMore}>
+              KNOW MORE <ArrowRight size={20} />
+            </a>
+          </motion.div>
         </div>
       </section>
 
       {/* What’s Happening Section */}
-      <section className="updates-section" id="updates">
-        <div className="container">
+      <section className="updates-section section-full bg-subtle" id="updates">
+        <div className="container-premium">
           <div className="updates-header">
             <h2 className="updates-title">What’s Happening at PHN?</h2>
             <p className="updates-subtitle">Tech that Transforms, Events that Inspire.</p>
@@ -760,7 +760,7 @@ const Footer = () => {
       
       {/* CTA Strip */}
       <div className="footer-cta-strip">
-        <div className="container">
+        <div className="container-premium">
           <div className="cta-strip-content">
             <div className="cta-strip-text">
               <h3 className="cta-title">Ready to build future-ready talent?</h3>
@@ -874,6 +874,80 @@ const Footer = () => {
   );
 };
 
+const GlobalNavbar = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isSchoolRoute = location.pathname === '/schoolsolution';
+
+  const navItems = [
+    { label: 'Services', items: ['School Solution', 'College Solution', 'Robotics Development', 'IT Development', 'Products'] },
+    { label: 'Our Company', items: ['About Us', 'Partners & Collaborations', 'Advisory Board'] },
+    { label: 'Media', items: ['Latest News', 'Gallery', 'Testimonials', 'Industrial Visits'] },
+    { label: 'PHN Skillhub', badge: 'New' },
+    { label: 'Programs' },
+    { label: 'Career' },
+    { label: 'Contact us' }
+  ];
+
+  return (
+    <header className={isSchoolRoute ? "school-hero-navbar" : ""}>
+      <div className="container flex items-center justify-between" style={{ height: '80px' }}>
+        {/* Left: Logo */}
+        <Link to="/" className="flex items-center no-underline" style={{ color: 'inherit' }}>
+          <BluePhnLogo height={42} className={isSchoolRoute ? "school-nav-logo" : ""} />
+        </Link>
+
+        {/* Center: Nav */}
+        <nav className="hidden lg:flex items-center">
+          {navItems.map((item, idx) => (
+            <div key={idx} className="nav-item">
+              <button className={`nav-link ${isSchoolRoute ? 'text-white' : ''}`}>
+                {item.label}
+                {item.items && <ChevronDown size={14} opacity={0.5} />}
+                {item.badge && <span className="badge-new">{item.badge}</span>}
+              </button>
+              {item.items && (
+                <div className="dropdown-menu">
+                  {item.items.map((sub, sIdx) => {
+                    let path = '#';
+                    if (sub === 'Advisory Board') path = '/advisory-board';
+                    if (sub === 'School Solution') path = '/schoolsolution';
+                    if (sub === 'College Solution') path = '/collegesolution';
+                    if (sub === 'Robotics Development') path = '/roboticsdevelopment';
+                    if (sub === 'IT Development') path = '/itdevelopment';
+                    if (sub === 'Products') path = '/products';
+                    if (sub === 'About Us') path = '/about';
+                    if (sub === 'Partners & Collaborations') path = '/partners';
+                    return (
+                      <Link key={sIdx} to={path} className="dropdown-item">{sub}</Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          ))}
+        </nav>
+
+        {/* Right: Branding Logo & Socials */}
+        <div className="flex items-center gap-6">
+          <div className="flex items-center" style={{ marginRight: '1rem' }}>
+            <BluePhnLogo height={32} className={isSchoolRoute ? "school-nav-logo" : ""} />
+          </div>
+          <div className={`social-icons ${isSchoolRoute ? 'school-nav-socials' : ''}`}>
+            <a href="#"><FacebookIcon /></a>
+            <a href="#"><InstagramIcon /></a>
+            <a href="#"><LinkedinIcon /></a>
+            <a href="#"><YoutubeIcon /></a>
+          </div>
+          <button className={`lg:hidden ml-4 ${isSchoolRoute ? 'text-white' : ''}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+};
+
 const App = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [partnersVisible, setPartnersVisible] = useState(false);
@@ -910,61 +984,19 @@ const App = () => {
       <div className="app-shell">
         <div className="app-container">
           <JobTrainingPopup />
-        {/* Header - Fixed & High Z-Index */}
-        <header>
-          <div className="container flex items-center justify-between" style={{ height: '80px' }}>
-            {/* Left: Logo */}
-            <Link to="/" className="flex items-center no-underline" style={{ color: 'inherit' }}>
-              <BluePhnLogo height={42} />
-            </Link>
+          <GlobalNavbar />
 
-            {/* Center: Nav */}
-            <nav className="hidden lg:flex items-center">
-              {navItems.map((item, idx) => (
-                <div key={idx} className="nav-item">
-                  <button className="nav-link">
-                    {item.label}
-                    {item.items && <ChevronDown size={14} opacity={0.5} />}
-                    {item.badge && <span className="badge-new">{item.badge}</span>}
-                  </button>
-                  {item.items && (
-                    <div className="dropdown-menu">
-                      {item.items.map((sub, sIdx) => {
-                        let path = '#';
-                        if (sub === 'Advisory Board') path = '/advisory-board';
-                        if (sub === 'School Solution') path = '/schoolsolution';
-                        return (
-                          <Link key={sIdx} to={path} className="dropdown-item">{sub}</Link>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </nav>
-
-            {/* Right: Branding Logo & Socials */}
-            <div className="flex items-center gap-6">
-              <div className="flex items-center" style={{ marginRight: '1rem' }}>
-                <BluePhnLogo height={32} />
-              </div>
-              <div className="social-icons">
-                <a href="#"><FacebookIcon /></a>
-                <a href="#"><InstagramIcon /></a>
-                <a href="#"><LinkedinIcon /></a>
-                <a href="#"><YoutubeIcon /></a>
-              </div>
-              <button className="lg:hidden ml-4" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-              </button>
-            </div>
-          </div>
-        </header>
 
         <Routes>
           <Route path="/" element={<HomePage partnersVisible={partnersVisible} handleKnowMore={handleKnowMore} activeTab={activeTab} setActiveTab={setActiveTab} />} />
           <Route path="/advisory-board" element={<AdvisoryBoardPage />} />
           <Route path="/schoolsolution" element={<SchoolSolution />} />
+          <Route path="/collegesolution" element={<CollegeSolution />} />
+          <Route path="/roboticsdevelopment" element={<RoboticsDevelopment />} />
+          <Route path="/itdevelopment" element={<ITDevelopment />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/partners" element={<Partners />} />
         </Routes>
         
         <Footer />
@@ -974,317 +1006,6 @@ const App = () => {
   );
 };
 
-
-
-const partnerData = [
-  {
-    id: 1,
-    category: 'Industry',
-    tag: 'Industry Partner',
-    name: 'BELOP',
-    title: 'PHN Technology Pvt Ltd and BELOP Establish a Strategic Collaboration',
-    description: "PHN Technology and BELOP have joined forces to advance educational solutions and empower students with future-ready skills, strengthening PHN's tech and education initiatives.",
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 2,
-    category: 'IIT',
-    tag: 'IIT Collaboration',
-    name: 'IIT Bombay',
-    title: 'IIT Bombay and PHN Technology: Best foot forward towards Technology and future!',
-    description: 'PHN Technology has partnered with IIT Bombay to establish a Center of Excellence in AI and robotics. This collaboration aims to inspire students by providing cutting-edge labs and nurturing entrepreneurial skills through interactive learning.',
-    image: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 3,
-    category: 'IIT',
-    tag: 'IIT Collaboration',
-    name: 'IIT Madras',
-    title: 'One More Step Forward Towards Technology - Collaboration with IIT Madras',
-    description: "PHN Technology's MoU with IIT Madras focuses on advanced technology and robotics training. The partnership aims to achieve breakthrough innovations through hands-on learning and ample resources.",
-    image: 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 4,
-    category: 'IIT',
-    tag: 'IIT Collaboration',
-    name: 'IIT Guwahati',
-    title: 'Robotics and AI: PHN Technology and IIT Guwahati Open Up New Boundaries',
-    description: 'PHN Technology and IIT Guwahati have signed an MoU to advance research and development in robotics and AI. This strategic partnership focuses on delivering practical and affordable tech solutions while promoting educational excellence.',
-    image: 'https://images.unsplash.com/photo-1523050335102-c32509142270?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 5,
-    category: 'IIT',
-    tag: 'IIT Collaboration',
-    name: 'IIT Patna',
-    title: 'IIT Patna and PHN Technology Establish Landmark Partnership',
-    description: 'PHN Technology is collaborating with IIT Patna to set up advanced AI and robotics labs. This partnership aims to inspire future tech leaders by fostering innovation and entrepreneurship.',
-    image: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 6,
-    category: 'IIT',
-    tag: 'IIT Collaboration',
-    name: 'IIT Jammu',
-    title: 'A Significant Milestone in Robotics and AI: The Partnership with IIT Jammu',
-    description: "In partnership with IIT Jammu's I3C, PHN Technology has established a Center of Excellence in robotics, AI, and IoT. This initiative provides hands-on training and supports tech innovation and entrepreneurship in Jammu and Kashmir.",
-    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 7,
-    category: 'NIT',
-    tag: 'NIT Collaboration',
-    name: 'NIT Delhi',
-    title: 'Prominent Partnership with NIT Delhi',
-    description: "PHN Technology's collaboration with NIT Delhi aims to revolutionize education using state-of-the-art robotics labs and AI technologies. The partnership focuses on enhancing research, fostering creativity, and hands-on learning experiences.",
-    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 8,
-    category: 'NIT',
-    tag: 'NIT Collaboration',
-    name: 'NIT Puducherry',
-    title: 'NIT Puducherry and PHN Technology Join Hands for Technical Advancement!',
-    description: 'PHN Technology is collaborating with NIT Puducherry to promote advanced learning in robotics, AI/ML, drones, AR/VR, and IoT. This partnership emphasizes practical learning and supports research and innovation.',
-    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 9,
-    category: 'NIT',
-    tag: 'NIT Collaboration',
-    name: 'NIT Manipur',
-    title: 'NIT Manipur and PHN Technology: Bringing Innovation to the North-East!',
-    description: 'Partnering with NIT Manipur, PHN Technology is establishing a Center of Excellence in robotics and AI. This initiative provides hands-on training and encourages leadership and entrepreneurship among students in North-East India.',
-    image: 'https://images.unsplash.com/photo-1498243639351-a0604b1263bc?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 10,
-    category: 'IIIT',
-    tag: 'IIIT Collaboration',
-    name: 'IIIT Vadodara',
-    title: 'With the Indian Institute of Information Technology, Vadodara (IIIT Vadodara)',
-    description: "PHN Technology's MoU with IIIT Vadodara aims to revolutionize education using cutting-edge robotics labs and AI technologies. The partnership emphasizes hands-on learning through workshops, real-world projects, and interactive sessions.",
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 11,
-    category: 'IIIT',
-    tag: 'IIIT Collaboration',
-    name: 'IIIT Surat',
-    title: 'IIIT Surat and PHN Technology: Leading the Way for Tech Innovation',
-    description: 'PHN Technology has partnered with IIIT Surat to enhance education in robotics, AI, and IoT. This collaboration focuses on hands-on learning through workshops and real-world projects, empowering students with the skills needed for future tech challenges.',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 12,
-    category: 'IIIT',
-    tag: 'IIIT Collaboration',
-    name: 'IIIT Bhopal',
-    title: 'IIIT Bhopal and PHN Technology: Shaping the Future of Education and Innovation!',
-    description: 'PHN Technology and IIIT Bhopal are collaborating to enhance technical education and research in robotics, AI, and IoT. This partnership emphasizes hands-on training and promotes a culture of innovation.',
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 13,
-    category: 'Industry',
-    tag: 'Industry Partner',
-    name: 'TCIL',
-    title: 'Trailblazing Partnership with TCIL: Empowering Telecom Innovation',
-    description: "PHN Technology is proud to sign an MoU with TCIL, a trusted name in telecommunications. This agreement combines TCIL's practical expertise with PHN's commitment to advanced tech education, aiming to shorten learning cycles, support hands-on research, and open fresh avenues for industry growth.",
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 14,
-    category: 'Industry',
-    tag: 'Industry Partner',
-    name: 'ITI Ltd.',
-    title: 'Driven by Innovation: A Collaboration with ITI Ltd.',
-    description: 'PHN Technology has partnered with ITI Limited to provide ICT-based e-Governance, software and cloud solutions, drone technology, and distance learning solutions, driving innovation in technology and education.',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800'
-  }
-];
-
-const PartnersSection = () => {
-  const [filter, setFilter] = useState('All');
-  const [selectedPartner, setSelectedPartner] = useState(null);
-
-  const filteredPartners = filter === 'All' 
-    ? partnerData 
-    : partnerData.filter(p => p.category === filter);
-
-  const filters = ['All', 'IIT', 'NIT', 'IIIT', 'Industry'];
-
-  return (
-    <section id="partners" className="partners-section">
-      <div className="abstract-blobs">
-        <div className="blob blob-1"></div>
-        <div className="blob blob-2"></div>
-      </div>
-      
-      <div className="container">
-        <div className="section-header">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="section-title"
-          >
-            PARTNERS & COLLABORATION
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="section-subtitle"
-          >
-            Strategic academic and industry partnerships driving robotics, AI, IoT and future-ready learning.
-          </motion.p>
-        </div>
-
-        <div className="filter-container">
-          {filters.map((f, idx) => (
-            <button 
-              key={idx}
-              className={`filter-btn ${filter === f ? 'active' : ''}`}
-              onClick={() => setFilter(f)}
-            >
-              {f}
-            </button>
-          ))}
-        </div>
-
-        <motion.div 
-          layout
-          className="partners-grid"
-        >
-          <AnimatePresence mode='popLayout'>
-            {filteredPartners.map((partner) => (
-              <PartnerCard 
-                key={partner.id} 
-                partner={partner} 
-                onClick={() => setSelectedPartner(partner)}
-              />
-            ))}
-          </AnimatePresence>
-        </motion.div>
-      </div>
-
-      <AnimatePresence>
-        {selectedPartner && (
-          <Modal partner={selectedPartner} onClose={() => setSelectedPartner(null)} />
-        )}
-      </AnimatePresence>
-    </section>
-  );
-};
-
-const PartnerCard = ({ partner, onClick }) => {
-  const [rotateX, setRotateX] = useState(0);
-  const [rotateY, setRotateY] = useState(0);
-
-  const handleMouseMove = (e) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateXValue = (y - centerY) / 10;
-    const rotateYValue = (centerX - x) / 10;
-
-    setRotateX(rotateXValue);
-    setRotateY(rotateYValue);
-  };
-
-  const handleMouseLeave = () => {
-    setRotateX(0);
-    setRotateY(0);
-  };
-
-  return (
-    <motion.div
-      layout
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.4 }}
-      className="card-perspective"
-    >
-      <motion.div
-        className="partner-card"
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        animate={{ 
-          rotateX: rotateX, 
-          rotateY: rotateY,
-          translateZ: rotateX !== 0 ? 20 : 0
-        }}
-        onClick={onClick}
-      >
-        <div className="card-image-wrapper">
-          <img src={partner.image} alt={partner.name} className="card-image" />
-          <div className="card-tag">{partner.tag}</div>
-        </div>
-        <div className="card-content">
-          <h3 className="card-partner-name">{partner.name}</h3>
-          <h4 className="card-title">{partner.title}</h4>
-          <p className="card-desc">{partner.description.substring(0, 100)}...</p>
-          
-          <div className="card-footer">
-            <div className="card-divider"></div>
-            <button className="view-details-btn">
-              View Details <ArrowRight size={14} />
-            </button>
-          </div>
-        </div>
-        <div className="card-shine"></div>
-      </motion.div>
-    </motion.div>
-  );
-};
-
-const Modal = ({ partner, onClose }) => {
-  return (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="modal-overlay"
-      onClick={onClose}
-    >
-      <motion.div 
-        initial={{ scale: 0.9, y: 20 }}
-        animate={{ scale: 1, y: 0 }}
-        exit={{ scale: 0.9, y: 20 }}
-        className="modal-content"
-        onClick={e => e.stopPropagation()}
-      >
-        <button className="modal-close" onClick={onClose}><X size={24} /></button>
-        <div className="modal-body">
-          <div className="modal-image-side">
-            <img src={partner.image} alt={partner.name} />
-          </div>
-          <div className="modal-text-side">
-            <span className="modal-tag">{partner.tag}</span>
-            <h2 className="modal-title">{partner.title}</h2>
-            <div className="modal-divider"></div>
-            <p className="modal-desc">{partner.description}</p>
-            <div className="modal-meta">
-              <div className="meta-item">
-                <strong>Collaboration Type:</strong> {partner.category}
-              </div>
-              <div className="meta-item">
-                <strong>Status:</strong> Active / Ongoing
-              </div>
-            </div>
-            <button className="btn" style={{ marginTop: '2rem', padding: '0.75rem 2rem' }}>Get in Touch</button>
-          </div>
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-};
 
 export default App;
 

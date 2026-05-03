@@ -1,0 +1,294 @@
+
+/* ==========================================================================
+   PHN TECHNOLOGY — PREMIUM GLOBAL DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+  --primary-bg: #0d0e12;
+  --secondary-bg: #151922;
+  --bg-deep: #08090d;
+  --bg-alt: #10131a;
+  
+  --accent-yellow: #fbb700;
+  --accent-blue: #0066ff;
+  --accent-cyan: #00d4ff;
+  
+  --text-white: #ffffff;
+  --text-muted: #d6d9e0;
+  --text-dim: rgba(255, 255, 255, 0.4);
+  
+  --glass-bg: rgba(13, 15, 20, 0.85);
+  --glass-card: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  
+  --container-max: 1280px;
+  --section-pad-desktop: 100px;
+  --section-pad-mobile: 60px;
+  
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 1. Global Reset & Scale */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--primary-bg);
+  color: var(--text-white);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 2. Global Layout Classes */
+.section-full {
+  width: 100%;
+  padding: var(--section-pad-desktop) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .section-full { padding: var(--section-pad-mobile) 0; }
+}
+
+.container-premium {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* 3. Global Typography Scale */
+h1, .hero-title-global {
+  font-size: clamp(40px, 8vw, 76px);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+h2, .section-title-global {
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.2;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+}
+
+h3, .card-title-global {
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+p, .body-text-global {
+  font-size: clamp(17px, 2vw, 20px);
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.label-small {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+}
+
+/* 4. Global Components Refinement */
+
+/* Buttons */
+.btn-premium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 36px;
+  min-height: 54px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 17px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--accent-yellow);
+  color: #000;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(251, 183, 0, 0.3);
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: #fff;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Cards */
+.card-premium {
+  background: var(--glass-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 32px;
+  padding: 40px;
+  transition: var(--transition-smooth);
+  height: 100%;
+}
+
+.card-premium:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 102, 255, 0.3);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+}
+
+/* Background Bands */
+.bg-deep { background: var(--bg-deep); }
+.bg-alt { background: var(--bg-alt); }
+.bg-subtle { background: var(--secondary-bg); }
+
+/* Dividers */
+.divider-glow {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 102, 255, 0.2), transparent);
+}
+
+/* 5. Navigation Fixes */
+header {
+  height: 84px !important;
+  background: rgba(13, 15, 20, 0.95) !important;
+}
+
+.nav-link {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  padding: 0.5rem 1.5rem !important;
+}
+
+/* 6. Form Styling */
+.form-input-global {
+  width: 100%;
+  min-height: 54px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 14px 24px;
+  color: #fff;
+  font-size: 17px;
+  transition: var(--transition-smooth);
+}
+
+.form-input-global:focus {
+  border-color: var(--accent-blue);
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
+/* 7. Homepage Specific Overrides (to enforce new system) */
+
+/* Hero on Home */
+.hero-container {
+  height: 100vh !important;
+}
+
+.hero-content h1 {
+  font-size: clamp(44px, 10vw, 84px) !important;
+  margin-bottom: 2rem !important;
+}
+
+.hero-content p {
+  font-size: 22px !important;
+  max-width: 800px !important;
+  margin-bottom: 3rem !important;
+}
+
+/* News Showcase (What's Happening) */
+.updates-section {
+  padding: 120px 0 !important;
+}
+
+.news-slide {
+  grid-template-columns: 1.2fr 1fr !important;
+  gap: 5rem !important;
+}
+
+.news-title-large {
+  font-size: 40px !important;
+  margin-bottom: 2rem !important;
+}
+
+.bullet-point p {
+  font-size: 19px !important;
+}
+
+/* Services / Updates Grid */
+.updates-grid {
+  gap: 3rem !important;
+}
+
+.update-card {
+  border-radius: 32px !important;
+}
+
+.update-info {
+  padding: 2.5rem !important;
+}
+
+.update-name {
+  font-size: 24px !important;
+}
+
+/* Impact Section */
+.impact-stat-item {
+  padding: 3rem 1rem !important;
+}
+
+.impact-value {
+  font-size: 56px !important;
+}
+
+.impact-label {
+  font-size: 18px !important;
+  letter-spacing: 0.1em !important;
+}
+
+/* Advisory Preview */
+.preview-title {
+  font-size: 48px !important;
+}
+
+.preview-member-card {
+  padding: 2.5rem !important;
+  border-radius: 28px !important;
+}
+
+/* 8. Mobile Responsiveness Extra */
+@media (max-width: 1024px) {
+  .news-slide { grid-template-columns: 1fr !important; }
+  .contact-grid-premium { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 768px) {
+  .container-premium { padding: 0 1.5rem; }
+  .btn-premium { width: 100%; }
+}
