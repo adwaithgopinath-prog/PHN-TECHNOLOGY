@@ -1,0 +1,124 @@
+.media-page-wrapper {
+  padding-top: 80px;
+  background: #111318;
+  min-height: 100vh;
+}
+
+.media-hero {
+  padding: 100px 0 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #161820 0%, #111318 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.media-page-title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: linear-gradient(to bottom, #fff, #aaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -2px;
+}
+
+.media-page-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.media-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 102, 255, 0.1), transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.media-content-section {
+  padding: 60px 0 100px;
+}
+
+.media-tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 20px;
+}
+
+.media-tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.media-tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -21px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--accent-yellow);
+  transition: width 0.3s;
+}
+
+.media-tab-btn.active {
+  color: #fff;
+}
+
+.media-tab-btn.active::after {
+  width: 100%;
+}
+
+.media-placeholder {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  text-align: center;
+}
+
+.placeholder-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.placeholder-content p {
+  color: var(--text-muted);
+  max-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .media-page-title {
+    font-size: 2.5rem;
+  }
+  
+  .media-tabs-nav {
+    gap: 10px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .media-tab-btn {
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+}
