@@ -1,0 +1,653 @@
+/* ==========================================================================
+   IPP PAGE — Institution Partnership Program
+   ========================================================================== */
+
+:root {
+  --ipp-bg: #05070a;
+  --ipp-card: rgba(15, 23, 42, 0.4);
+  --ipp-card-hover: rgba(30, 41, 59, 0.6);
+  --ipp-border: rgba(255, 255, 255, 0.08);
+  --ipp-blue: #2563eb;
+  --ipp-cyan: #06b6d4;
+  --ipp-purple: #8b5cf6;
+  --ipp-orange: #f97316;
+  --ipp-text: #f8fafc;
+  --ipp-text-dim: #94a3b8;
+}
+
+.ipp-page {
+  background-color: var(--ipp-bg);
+  color: var(--ipp-text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  padding-top: 96px; /* Offset for ProgramsTopBar */
+}
+
+/* --- 1. Hero --- */
+.ipp-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.ipp-bg-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.15), transparent 50%),
+              radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1), transparent 50%);
+  z-index: 1;
+}
+
+.ipp-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.ipp-eyebrow {
+  display: inline-block;
+  color: var(--ipp-cyan);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  background: rgba(6, 182, 212, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.ipp-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.ipp-title span {
+  color: var(--ipp-blue);
+}
+
+.ipp-subtitle {
+  font-size: 1.15rem;
+  color: var(--ipp-text-dim);
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 90%;
+}
+
+.ipp-hero-ctas {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.btn-ipp-primary, .btn-ipp-secondary {
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-ipp-primary {
+  background: var(--ipp-blue);
+  color: #fff;
+  border: none;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+.btn-ipp-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+}
+
+.btn-ipp-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border: 1px solid var(--ipp-border);
+  backdrop-filter: blur(10px);
+}
+
+.btn-ipp-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.ipp-benefits-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ipp-benefits-chips .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ipp-text-dim);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ipp-benefits-chips .chip svg {
+  color: var(--ipp-cyan);
+}
+
+.video-card-glass {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 16px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.video-card-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, var(--ipp-blue), var(--ipp-purple));
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(15px);
+}
+
+/* --- 2. Partners Marquee --- */
+.ipp-partners {
+  padding: 40px 0;
+  border-top: 1px solid var(--ipp-border);
+  border-bottom: 1px solid var(--ipp-border);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.partners-title {
+  color: var(--ipp-text-dim);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.logo-marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.logo-marquee {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  width: max-content;
+  animation: scrollMarquee 30s linear infinite;
+}
+
+.logo-marquee span {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+}
+
+@keyframes scrollMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* assumes duplicated content */
+}
+
+/* --- 3. Impact Stats --- */
+.ipp-stats-section {
+  padding: 80px 0;
+}
+
+.ipp-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.ipp-stat-card {
+  text-align: center;
+  background: var(--ipp-card);
+  border: 1px solid var(--ipp-border);
+  padding: 40px 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.ipp-stat-card:hover {
+  background: var(--ipp-card-hover);
+  border-color: var(--ipp-blue);
+  transform: translateY(-5px);
+}
+
+.ipp-stat-card h3 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--ipp-blue);
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.ipp-stat-card p {
+  color: var(--ipp-text-dim);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- 4. Six Pillars --- */
+.ipp-pillars-section {
+  padding: 100px 0;
+  background: rgba(15, 23, 42, 0.2);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.pillar-card {
+  background: var(--ipp-card);
+  border: 1px solid var(--ipp-border);
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-5px);
+  background: var(--ipp-card-hover);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.pillar-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--ipp-blue);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.pillar-card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* --- 5. Domains --- */
+.ipp-domains-section {
+  padding: 100px 0;
+}
+
+.domains-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.domain-card {
+  position: relative;
+  padding: 2px;
+  border-radius: 26px;
+  background: var(--ipp-border);
+  overflow: hidden;
+}
+
+.domain-card-inner {
+  background: #0a0f1a;
+  padding: 50px;
+  border-radius: 24px;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.domain-card h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.domain-card p {
+  color: var(--ipp-text-dim);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.domain-glow {
+  position: absolute;
+  top: 0; right: 0; width: 150px; height: 150px;
+  filter: blur(60px);
+  z-index: -1;
+  opacity: 0.15;
+}
+
+.theme-blue h3 { color: var(--ipp-blue); }
+.theme-blue .domain-glow { background: var(--ipp-blue); }
+.theme-blue:hover { background: var(--ipp-blue); }
+
+.theme-purple h3 { color: var(--ipp-purple); }
+.theme-purple .domain-glow { background: var(--ipp-purple); }
+.theme-purple:hover { background: var(--ipp-purple); }
+
+.theme-orange h3 { color: var(--ipp-orange); }
+.theme-orange .domain-glow { background: var(--ipp-orange); }
+.theme-orange:hover { background: var(--ipp-orange); }
+
+.theme-cyan h3 { color: var(--ipp-cyan); }
+.theme-cyan .domain-glow { background: var(--ipp-cyan); }
+.theme-cyan:hover { background: var(--ipp-cyan); }
+
+/* --- 6. Dual Value --- */
+.ipp-dual-value-section {
+  padding: 100px 0;
+  background: rgba(15, 23, 42, 0.2);
+}
+
+.dual-value-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.dv-card {
+  background: var(--ipp-card);
+  border: 1px solid var(--ipp-border);
+  border-radius: 30px;
+  padding: 60px;
+}
+
+.dv-icon {
+  margin-bottom: 30px;
+}
+
+.for-institutions { border-top: 4px solid var(--ipp-gold, #fbbf24); }
+.for-institutions .dv-icon { color: var(--ipp-gold, #fbbf24); }
+
+.for-students { border-top: 4px solid var(--ipp-cyan); }
+.for-students .dv-icon { color: var(--ipp-cyan); }
+
+.dv-card h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.dv-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dv-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.for-institutions li svg { color: var(--ipp-gold, #fbbf24); margin-top: 2px;}
+.for-students li svg { color: var(--ipp-cyan); margin-top: 2px;}
+
+/* --- 7. Pricing --- */
+.ipp-pricing-section {
+  padding: 100px 0;
+}
+
+.pricing-table-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--ipp-card);
+  border: 1px solid var(--ipp-border);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.ipp-pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ipp-pricing-table th, .ipp-pricing-table td {
+  padding: 24px;
+  text-align: left;
+  border-bottom: 1px solid var(--ipp-border);
+}
+
+.ipp-pricing-table th {
+  font-size: 1.1rem;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.ipp-pricing-table td {
+  font-size: 1.05rem;
+  color: var(--ipp-text-dim);
+}
+
+.ipp-pricing-table td:first-child {
+  color: #fff;
+  font-weight: 600;
+}
+
+.highlight-col {
+  background: rgba(37, 99, 235, 0.1);
+  color: #fff !important;
+  font-weight: 800 !important;
+}
+
+.strike-through {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.total-row td {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  border-bottom: none;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.pricing-highlight {
+  background: var(--ipp-blue);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.pricing-highlight h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* --- 8. Added Benefits --- */
+.ipp-added-benefits {
+  padding: 0 0 100px;
+}
+
+.added-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.added-benefit-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--ipp-border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.added-benefit-card h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.free-badge {
+  background: rgba(139, 92, 246, 0.2);
+  color: #c4b5fd;
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* --- 9. How To Get Started --- */
+.ipp-steps-section {
+  padding: 100px 0;
+  background: rgba(15, 23, 42, 0.2);
+}
+
+.steps-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+.steps-timeline-grid::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  right: 50px;
+  height: 2px;
+  background: var(--ipp-border);
+  z-index: 1;
+}
+
+.step-item {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.step-num {
+  width: 60px;
+  height: 60px;
+  background: var(--ipp-bg);
+  border: 2px solid var(--ipp-cyan);
+  color: var(--ipp-cyan);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0 auto 24px;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+}
+
+.step-item h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* --- 10. Final CTA --- */
+.ipp-final-cta {
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ipp-bg-glow-alt {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.15), transparent 60%);
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .ipp-hero-grid, .ipp-stats-grid, .domains-grid, .dual-value-grid {
+    grid-template-columns: 1fr;
+  }
+  .ipp-hero-grid { gap: 40px; }
+  .ipp-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+  .added-benefits-grid { grid-template-columns: 1fr; }
+  .steps-timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .steps-timeline-grid::before {
+    top: 0; bottom: 0;
+    left: 30px;
+    width: 2px;
+    height: auto;
+  }
+  .step-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 24px;
+  }
+  .step-num { margin: 0; }
+  
+  .ipp-pricing-table th, .ipp-pricing-table td {
+    padding: 16px 12px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .ipp-title { font-size: 2.5rem; }
+  .ipp-hero-ctas { flex-direction: column; }
+  .btn-ipp-primary, .btn-ipp-secondary { width: 100%; justify-content: center; }
+  .ipp-stats-grid, .pillars-grid { grid-template-columns: 1fr; }
+  .dual-value-grid { gap: 30px; }
+  .dv-card { padding: 40px 20px; }
+  
+  /* Make table scrollable on mobile */
+  .pricing-table-wrapper { overflow-x: auto; }
+  .ipp-pricing-table { min-width: 600px; }
+}

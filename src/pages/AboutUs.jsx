@@ -25,35 +25,68 @@ const AboutUs = () => {
 
   return (
     <div className="about-page">
-      {/* 1. Hero Section */}
-      <section className="about-hero">
-        <div className="hero-overlay"></div>
-        <div className="hero-pattern"></div>
-        <div className="container-ab hero-content-ab">
+      {/* 1. Premium Hero Section */}
+      <section className="about-hero-premium">
+        <div className="hero-bg-wrapper">
+          <img 
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000" 
+            alt="Corporate Building" 
+            className="hero-bg-img"
+          />
+          <div className="hero-overlay-premium"></div>
+          <div className="hero-glow-layer"></div>
+          <div className="hero-circuit-overlay"></div>
+        </div>
+        
+        <div className="container-ab hero-content-premium">
           <motion.div 
-            className="hero-text-ab"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="hero-text-panel"
           >
-            <div className="ab-badge">PHN TECHNOLOGY</div>
-            <h1 className="hero-h1-ab">
-              Building Future-Ready Learning Through <span className="blue-gold-grad">Robotics & AI</span>
-            </h1>
-            <p className="hero-p-ab">
-              Bridging the gap between traditional education and industry needs by delivering 
-              hands-on STEM programs, robotics labs, and institutional partnerships across India.
+            <span className="hero-eyebrow-premium">ABOUT PHN TECHNOLOGY</span>
+            <h1 className="hero-title-premium">PHN Technology</h1>
+            <div className="hero-title-divider"></div>
+            <h2 className="hero-headline-premium">
+              Building Future-Ready Learning Through Robotics, AI, and Industry Innovation
+            </h2>
+            <p className="hero-intro-premium">
+              PHN Technology bridges the gap between traditional education and industry needs through hands-on STEM learning, robotics labs, AI/IoT training, and institutional partnerships across India.
             </p>
-            <div className="hero-btns-ab">
-              <button className="btn-ab-primary">Explore Our Journey <ArrowRight size={18} /></button>
-              <button className="btn-ab-outline">View Collaborations</button>
+
+            <div className="credibility-chips">
+              <div className="cred-chip-v2">
+                <span className="chip-val">12+ Years</span>
+                <span className="chip-lab">Expertise</span>
+              </div>
+              <div className="cred-chip-v2">
+                <span className="chip-val">2500+</span>
+                <span className="chip-lab">Institutions</span>
+              </div>
+              <div className="cred-chip-v2">
+                <span className="chip-val">8Lac+</span>
+                <span className="chip-lab">Students Trained</span>
+              </div>
+              <div className="cred-chip-v2">
+                <span className="chip-val">IIT/NIT</span>
+                <span className="chip-lab">Collaborations</span>
+              </div>
             </div>
 
-            <div className="cred-chips">
-              <div className="cred-chip"><Star size={16} /> 12+ Years Expertise</div>
-              <div className="cred-chip"><Building2 size={16} /> 2500+ Institutions</div>
-              <div className="cred-chip"><Users size={16} /> 8Lac+ Students Trained</div>
-              <div className="cred-chip"><GraduationCap size={16} /> IIT/NIT Collaborations</div>
+            <div className="hero-ctas-premium">
+              <button 
+                className="btn-premium-ab btn-solid"
+                onClick={() => document.getElementById('milestones')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Explore Our Journey <ArrowRight size={20} />
+              </button>
+              <button 
+                className="btn-premium-ab btn-glass-v2"
+                onClick={() => window.location.href = '/partners'}
+              >
+                View Collaborations
+              </button>
             </div>
           </motion.div>
         </div>
@@ -216,7 +249,7 @@ const AboutUs = () => {
       </section>
 
       {/* 5. Milestones & Impact Section */}
-      <section className="milestones-ab">
+      <section id="milestones" className="milestones-ab">
         <div className="container-ab">
           <div className="sec-header-ab">
             <h2 className="sec-h2-ab">Our Milestones</h2>
