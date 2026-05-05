@@ -60,26 +60,23 @@ const ProgramsTopBar = () => {
 
 
     },
-    { label: 'Masterclass', path: '/programs/masterclasses', icon: <GraduationCap size={18} /> },
+    { label: 'Masterclass', path: '/programs/masterclass', icon: <GraduationCap size={18} /> },
     { 
       label: 'Internship', 
-      path: '/programs/internships', 
+      path: '/programs/internship/university', 
       icon: <Briefcase size={18} />,
       items: [
-        { name: 'Internship Overview', path: '/programs/internships' },
-        { name: 'Web Development Internship', path: '/programs/internships/web-development' },
-        { name: 'Robotics Internship', path: '/programs/internships/robotics' },
-        { name: 'AI/ML Internship', path: '/programs/internships/ai-ml' }
+        { name: 'University', path: '/programs/internship/university' },
+        { name: 'IIT / NIT / IIIT', path: '/programs/internship/institute' }
       ]
     },
     { 
       label: 'Summer Internship', 
-      path: '/programs/summer-internship', 
+      path: '/programs/summer-internship/online', 
       icon: <Sun size={18} />,
       items: [
-        { name: 'Summer Internship Overview', path: '/programs/summer-internship' },
-        { name: '4 Week Program', path: '/programs/summer-internship/4-week' },
-        { name: '8 Week Program', path: '/programs/summer-internship/8-week' }
+        { name: 'Online', path: '/programs/summer-internship/online' },
+        { name: 'Offline', path: '/programs/summer-internship/offline' }
       ]
     },
     { label: 'Contact', path: '/contact', icon: <Mail size={18} /> }

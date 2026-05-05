@@ -3,7 +3,9 @@
 .partners-page {
   background-color: #0a0a0c;
   color: #ffffff;
-  min-height: 100vh;
+  min-height: 100%;
+
+
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
 }

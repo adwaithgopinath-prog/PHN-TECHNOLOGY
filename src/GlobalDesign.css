@@ -35,19 +35,59 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--primary-bg);
+  background: #05070f;
   color: var(--text-white);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1.7;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
+
+.app,
+.site-wrapper,
+.page-wrapper,
+.layout,
+.page {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+main {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+main > *:last-child,
+section:last-of-type,
+footer {
+  margin-bottom: 0;
+}
+
+footer {
+  padding-bottom: 0;
+}
+
+footer::after,
+body::after,
+#root::after {
+  content: none;
+  display: none;
+}
+
+
+
 
 /* 2. Global Layout Classes */
 .section-full {
@@ -491,7 +531,25 @@ header {
 .final-cta-section::before { content: ''; position: absolute; inset: 0; background: url('/assets/robotics-blueprint.svg'); opacity: 0.05; }
 
 /* --- Footer Premium --- */
-.main-footer-premium { background: var(--bg-deep); position: relative; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 80px; }
+section,
+footer,
+.cta-section,
+.final-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow,
+.blob,
+.orb,
+.decorative-shape,
+.background-accent {
+  pointer-events: none;
+}
+
+.main-footer-premium { background: var(--bg-deep); position: relative; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 80px; padding-bottom: 0; margin-bottom: 0; }
+
+
 .footer-link { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.3s; display: block; }
 .footer-link:hover { color: var(--accent-yellow); transform: translateX(5px); }
 .social-link { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; transition: all 0.3s; }

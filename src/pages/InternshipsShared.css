@@ -1,0 +1,502 @@
+/* InternshipsShared.css */
+
+.internship-page-wrapper {
+  background-color: #05070a;
+  color: #ffffff;
+  min-height: 100%;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.section-spacing {
+  padding: 100px 0;
+}
+
+.container-custom {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Hero Section */
+.hero-internship {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 0 80px;
+  background: radial-gradient(circle at 70% 30%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 10% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-text-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.hero-text-content p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 550px;
+}
+
+.hero-visual-content {
+  position: relative;
+}
+
+.video-card-premium {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  padding: 15px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+}
+
+.video-placeholder {
+  aspect-ratio: 16/9;
+  background: #111;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.video-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  transition: background 0.3s;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: #ff0000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 15px;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.video-card-premium:hover .play-button {
+  transform: scale(1.1);
+}
+
+.video-card-premium:hover .play-overlay {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.video-card-premium h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* Domain Section */
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.domain-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.domain-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 102, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.domain-img {
+  height: 180px;
+  overflow: hidden;
+}
+
+.domain-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.domain-card:hover .domain-img img {
+  transform: scale(1.1);
+}
+
+.domain-info {
+  padding: 24px;
+  text-align: center;
+}
+
+.domain-info h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Skill Section */
+.skill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.skill-visual {
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+}
+
+.skill-visual img {
+  width: 100%;
+  display: block;
+}
+
+.skill-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.benefit-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.benefit-item {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+}
+
+.benefit-icon-box {
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 102, 255, 0.1);
+  color: #0066ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  shrink: 0;
+}
+
+.benefit-info h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.benefit-info p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+}
+
+/* Collaboration Section */
+.collab-chip {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(0, 102, 255, 0.1);
+  border: 1px solid rgba(0, 102, 255, 0.2);
+  color: #00d1ff;
+  font-weight: 700;
+  border-radius: 50px;
+  margin-bottom: 40px;
+}
+
+.logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.partner-logo-box {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 15px 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+}
+
+/* Benefits Grid */
+.benefits-grid-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.benefit-card-premium {
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 32px;
+  transition: all 0.3s;
+}
+
+.benefit-card-premium:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(0, 102, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.benefit-card-premium h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+/* FAQ */
+.faq-stack {
+  max-width: 900px;
+  margin: 60px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.faq-trigger {
+  width: 100%;
+  padding: 24px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-content {
+  padding: 0 30px 24px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+/* IIT Specific Cards */
+.campus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.campus-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 32px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.campus-card:hover {
+  transform: translateY(-10px);
+  border-color: #0066ff;
+  box-shadow: 0 20px 50px rgba(0, 102, 255, 0.2);
+}
+
+.campus-img {
+  height: 220px;
+  position: relative;
+}
+
+.campus-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.campus-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.campus-info {
+  padding: 30px;
+}
+
+.campus-info h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.seat-line {
+  color: #00d1ff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Final Countdown Section */
+.countdown-section {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.countdown-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.countdown-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+}
+
+.countdown-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #05070a, transparent, #05070a);
+  z-index: 1;
+}
+
+.countdown-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.timer-box {
+  width: 120px;
+  padding: 25px 0;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer-val {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #0066ff;
+}
+
+.timer-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-grid, .skill-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    text-align: center;
+  }
+  
+  .hero-text-content p {
+    margin: 0 auto 40px;
+  }
+  
+  .logo-row {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding: 70px 0;
+  }
+  
+  .countdown-grid {
+    gap: 15px;
+  }
+  
+  .timer-box {
+    width: 80px;
+    padding: 15px 0;
+  }
+  
+  .timer-val {
+    font-size: 1.5rem;
+  }
+}

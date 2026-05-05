@@ -13,35 +13,77 @@
   --bg-deep: #0d0e14;
 }
 
-* {
+html,
+body,
+#root {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background:
-    radial-gradient(circle at 18% 8%, rgba(0, 102, 255, 0.14), transparent 30rem),
-    radial-gradient(circle at 82% 32%, rgba(251, 183, 0, 0.10), transparent 26rem),
-    radial-gradient(circle at 50% 70%, rgba(0, 60, 200, 0.07), transparent 40rem),
-    #111318;
-  color: var(--text-white);
-  line-height: 1.6;
+  min-height: 100%;
   overflow-x: hidden;
 }
 
-/* =========================================================
-   GLOBAL ROBOTICS BLUEPRINT OVERLAY — Full-page background
-   ========================================================= */
+body {
+  background: #05070f;
+  color: var(--text-white);
+  line-height: 1.6;
+}
+
+.app,
+.site-wrapper,
+.page-wrapper,
+.layout,
+.page {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+main {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+main > *:last-child,
+section:last-of-type,
+footer {
+  margin-bottom: 0;
+}
+
+footer {
+  padding-bottom: 0;
+}
+
+footer::after,
+body::after,
+#root::after {
+  content: none;
+  display: none;
+}
+
+section,
+footer,
+.cta-section,
+.final-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow,
+.blob,
+.orb,
+.decorative-shape,
+.background-accent {
+  pointer-events: none;
+}
+
 .app-shell {
   position: relative;
-  min-height: 100vh;
+  width: 100%;
 }
+
+
+
 
 .app-shell::before {
   content: '';

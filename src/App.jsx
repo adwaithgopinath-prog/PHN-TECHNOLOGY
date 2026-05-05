@@ -19,6 +19,12 @@ import PartnersSection from './components/PartnersSection';
 
 import InstituteWorkshop from './pages/InstituteWorkshop';
 import UniversityWorkshop from './pages/UniversityWorkshop';
+import Masterclass from './pages/Masterclass';
+import UniversityInternship from './pages/UniversityInternship';
+import InstituteInternship from './pages/InstituteInternship';
+import OnlineSummerInternship from './pages/OnlineSummerInternship';
+import OfflineSummerInternship from './pages/OfflineSummerInternship';
+import Contact from './pages/Contact';
 
 
 
@@ -79,9 +85,9 @@ const GlobalNavbar = () => {
         {name: 'Programs Overview', path: '/programs'}, 
         {name: 'IIT / NIT / IIIT Workshop', path: '/programs/workshop/institute'}, 
         {name: 'University Workshop', path: '/programs/workshop/university'}, 
-        {name: 'Masterclasses', path: '/programs/masterclasses'}, 
-        {name: 'Internships', path: '/programs/internships'}, 
-        {name: 'Summer Internship', path: '/programs/summer-internship'}
+        {name: 'Masterclass', path: '/programs/masterclass'}, 
+        {name: 'Internships', path: '/programs/internship/university'}, 
+        {name: 'Summer Internship', path: '/programs/summer-internship/online'}
 
 
       ] 
@@ -185,16 +191,6 @@ const HeroSection = () => (
     <div className="hero-overlay-premium"></div>
     <div className="hero-content-premium container-premium">
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-        <span className="hero-eyebrow">IN COLLABORATION WITH</span>
-        <h1 className="hero-title-main">IIT PATNA</h1>
-        <h3 className="hero-subtitle">Prof. T. N. Singh, Director, IIT Patna</h3>
-        <div className="hero-divider"></div>
-        <h2 className="hero-focus">Center of Excellence (CoE) Lab</h2>
-        
-        <div className="hero-tags">
-          <span>Robotics</span>
-          <span>AI</span>
-        </div>
 
         <div className="hero-ctas">
           <Link to="/partners" className="btn-premium btn-primary">KNOW MORE</Link>
@@ -202,6 +198,7 @@ const HeroSection = () => (
             <PlayCircle size={20} /> WATCH LIVE
           </a>
         </div>
+
       </motion.div>
     </div>
     <div className="hero-particles"></div>
@@ -541,11 +538,19 @@ const App = () => {
             <Route path="/programs/ipp" element={<IPP />} />
             <Route path="/programs/workshop/institute" element={<InstituteWorkshop />} />
             <Route path="/programs/workshop/university" element={<UniversityWorkshop />} />
+            <Route path="/programs/masterclass" element={<Masterclass />} />
+            <Route path="/programs/masterclasses" element={<Masterclass />} />
+            <Route path="/programs/internship/university" element={<UniversityInternship />} />
+            <Route path="/programs/internship/institute" element={<InstituteInternship />} />
+            <Route path="/programs/internships" element={<UniversityInternship />} />
+            <Route path="/programs/summer-internship/online" element={<OnlineSummerInternship />} />
+            <Route path="/programs/summer-internship/offline" element={<OfflineSummerInternship />} />
+            <Route path="/programs/summer-internship" element={<OnlineSummerInternship />} />
             <Route path="/programs/*" element={<Programs />} />
 
 
             <Route path="/career" element={<div className="pt-32 text-center text-3xl">Career</div>} />
-            <Route path="/contact" element={<div className="pt-32 text-center text-3xl">Contact Us</div>} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         
