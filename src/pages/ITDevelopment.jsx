@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  ArrowRight, Cpu as AIChip, Cloud, Shield, Database, Layout, 
-  BarChart, Layers, Settings, Globe, Users, CheckCircle2, 
-  ChevronRight, Laptop, Server, Code, Lock, LineChart, 
-  Smartphone, Terminal, Search, Zap, Activity, MessageSquare
+import {
+  ArrowRight, Cpu as AIChip, Cloud, Shield, Database, Layout,
+  BarChart, Layers, Settings, Globe, Users, CheckCircle2,
+  ChevronRight, Laptop, Server, Code, Lock, LineChart,
+  Smartphone, Terminal, Search, Zap, Activity, MessageSquare,
+  Award, TrendingUp, Sparkles
 } from 'lucide-react';
 import './ITDevelopment.css';
 
@@ -298,7 +299,7 @@ const ITDevelopment = () => {
               {
                 title: "Security & Compliance Focused",
                 text: "We prioritize security and ensure compliance with industry regulations, protecting your data and infrastructure.",
-                icon: <ShieldCheck size={32} />,
+                icon: <CustomShieldCheck size={32} />,
                 img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
               },
               {
@@ -452,26 +453,15 @@ const ITDevelopment = () => {
   );
 };
 
-// Placeholder icons for Lucide versions
+// Removed redeclared icons that were already imported or caused conflicts
 const Brain = ({ size }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04Z"></path>
     <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04Z"></path>
   </svg>
 );
-const Award = ({ size }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
-    <circle cx="12" cy="8" r="6"></circle>
-  </svg>
-);
-const TrendingUp = ({ size }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-    <polyline points="17 6 23 6 23 12"></polyline>
-  </svg>
-);
-const ShieldCheck = ({ size }) => (
+
+const CustomShieldCheck = ({ size }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
     <path d="m9 12 2 2 4-4"></path>

@@ -50,33 +50,30 @@ const ProgramsTopBar = () => {
     { label: 'IPP', path: '/programs/ipp', icon: <FileText size={18} />, badge: 'New' },
     { 
       label: 'Workshop', 
-      path: '/programs/workshops', 
+      path: '#', 
       icon: <BookOpen size={18} />,
       items: [
-        { name: 'IIT / NIT / IIIT', path: '/programs/workshop/institute' },
-        { name: 'University', path: '/programs/workshop/university' }
+        { name: 'IIT / NIT / IIIT', path: '/programs/workshop/institute/' },
+        { name: 'University', path: '/programs/workshop/university/' }
       ]
-
-
-
     },
     { label: 'Masterclass', path: '/programs/masterclass', icon: <GraduationCap size={18} /> },
     { 
       label: 'Internship', 
-      path: '/programs/internship/university', 
+      path: '#', 
       icon: <Briefcase size={18} />,
       items: [
-        { name: 'University', path: '/programs/internship/university' },
-        { name: 'IIT / NIT / IIIT', path: '/programs/internship/institute' }
+        { name: 'University', path: '/programs/internship/university/' },
+        { name: 'IIT / NIT / IIIT', path: '/programs/internship/institute/' }
       ]
     },
     { 
       label: 'Summer Internship', 
-      path: '/programs/summer-internship/online', 
+      path: '#', 
       icon: <Sun size={18} />,
       items: [
-        { name: 'Online', path: '/programs/summer-internship/online' },
-        { name: 'Offline', path: '/programs/summer-internship/offline' }
+        { name: 'Online', path: '/programs/summer-internship/online/' },
+        { name: 'Offline', path: '/programs/summer-internship/offline/' }
       ]
     },
     { label: 'Contact', path: '/contact', icon: <Mail size={18} /> }
@@ -94,11 +91,32 @@ const ProgramsTopBar = () => {
     setExpandedMobileItem(expandedMobileItem === label ? null : label);
   };
 
-  const isActive = (path, items) => {
-    if (location.pathname === path) return true;
-    if (items) {
-      return items.some(item => location.pathname === item.path);
+  const isNavItemActive = (item) => {
+    const current = location.pathname;
+    
+    // Check main path
+    if (item.path !== '#' && current === item.path) return true;
+    
+    // Special logic for Workshop active state
+    if (item.label === 'Workshop') {
+      return current.startsWith('/programs/workshop/institute') || current.startsWith('/programs/workshop/university');
     }
+    
+    // Special logic for Internship active state
+    if (item.label === 'Internship') {
+      return current.startsWith('/programs/internship/university') || current.startsWith('/programs/internship/institute');
+    }
+
+    // Special logic for Summer Internship active state
+    if (item.label === 'Summer Internship') {
+      return current.startsWith('/programs/summer-internship/online') || current.startsWith('/programs/summer-internship/offline');
+    }
+
+    // Check items for exact matches (fallback)
+    if (item.items) {
+      return item.items.some(sub => current === sub.path || current === sub.path.slice(0, -1));
+    }
+
     return false;
   };
 
@@ -119,16 +137,16 @@ const ProgramsTopBar = () => {
         {/* Desktop Nav */}
         <nav className="ptb-desktop-nav">
           {navItems.map((item, idx) => {
-            const active = isActive(item.path, item.items);
+            const active = isNavItemActive(item);
             return (
               <div key={idx} className={`ptb-nav-item ${active ? 'active' : ''}`}>
                 {item.items ? (
                   <div className="ptb-dropdown-wrapper">
-                    <Link to={item.path} className="ptb-nav-link">
+                    <div className="ptb-nav-link">
                       <span className="ptb-icon">{item.icon}</span>
                       <span className="ptb-label">{item.label}</span>
                       <ChevronDown size={14} className="ptb-chevron" />
-                    </Link>
+                    </div>
                     <div className="ptb-dropdown-menu">
                       {item.items.map((sub, sidx) => (
                         <Link key={sidx} to={sub.path} className="ptb-dropdown-item">
@@ -227,3 +245,4 @@ const ProgramsTopBar = () => {
 };
 
 export default ProgramsTopBar;
+

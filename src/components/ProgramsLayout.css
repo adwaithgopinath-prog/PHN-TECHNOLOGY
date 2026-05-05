@@ -1,0 +1,17 @@
+.programs-layout {
+  min-height: 100vh;
+  background-color: #030407; /* Dark background as requested */
+  display: flex;
+  flex-direction: column;
+}
+
+.programs-main-content {
+  flex: 1;
+  padding-top: 96px; /* Match the height of ProgramsTopBar */
+}
+
+@media (max-width: 1024px) {
+  .programs-main-content {
+    padding-top: 76px; /* Mobile header height if different */
+  }
+}

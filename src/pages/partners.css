@@ -70,9 +70,9 @@
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0066ff !important;
+  -webkit-text-fill-color: #0066ff !important;
+  background: none !important;
 }
 
 .hero-subtitle-main {

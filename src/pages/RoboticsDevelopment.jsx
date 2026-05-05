@@ -238,11 +238,11 @@ const RoboticsDevelopment = () => {
           <div className="workflow-line-wrapper">
             <div className="workflow-main-line"></div>
             {[
-              { step: 'Diagnose', desc: 'Understand automation gaps.', icon: <Search size={24}/> },
-              { step: 'Design', desc: 'Engineer robotic architecture.', icon: <Layers size={24}/> },
-              { step: 'Prototype', desc: 'Build and test systems.', icon: <Wrench size={24}/> },
-              { step: 'Integrate', desc: 'Deploy with existing workflows.', icon: <Box size={24}/> },
-              { step: 'Optimize', desc: 'Improve performance with data.', icon: <Activity size={24}/> }
+              { step: '1.Diagnose', desc: 'Understand automation gaps.', icon: <Search size={24}/> },
+              { step: '2.Design', desc: 'Engineer robotic architecture.', icon: <Layers size={24}/> },
+              { step: '3.Prototype', desc: 'Build and test systems.', icon: <Wrench size={24}/> },
+              { step: '4.Integrate', desc: 'Deploy with existing workflows.', icon: <Box size={24}/> },
+              { step: '5.Optimize', desc: 'Improve performance with data.', icon: <Activity size={24}/> }
             ].map((item, i) => (
               <motion.div 
                 key={i} 
@@ -255,7 +255,6 @@ const RoboticsDevelopment = () => {
                 <div className="step-node">
                   <div className="node-glow"></div>
                   <div className="node-icon">{item.icon}</div>
-                  <div className="step-index">{i + 1}</div>
                 </div>
                 <div className="step-text">
                   <h4>{item.step}</h4>

@@ -6,7 +6,7 @@ import {
   CheckCircle2, Globe, Sparkles, TrendingUp,
   Cpu, Rocket, Star, Layout
 } from 'lucide-react';
-import founderImg from '../assets/founder-pradip.jpg';
+import founderImg from '../assets/founder_ceo.png';
 import './AboutUs.css';
 
 const AboutUs = () => {

@@ -1,0 +1,737 @@
+/* SkillhubTrending.css */
+
+.sh-trending-page {
+  background-color: #05070a;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+.sht-section {
+  padding: 80px 0;
+}
+
+.sht-bg-alt {
+  background: rgba(255, 255, 255, 0.02);
+  border-y: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+/* 1. Hero Section */
+.sht-hero {
+  position: relative;
+  padding: 100px 0;
+  background: radial-gradient(circle at 80% 50%, rgba(0, 102, 255, 0.15) 0%, transparent 60%),
+              radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
+}
+
+.sht-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .sht-hero-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.sht-hero-badge {
+  display: inline-block;
+  background: rgba(0, 102, 255, 0.15);
+  color: #00d4ff;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  border: 1px solid rgba(0, 102, 255, 0.3);
+}
+
+.sht-hero-content h1 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.sht-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 32px;
+}
+
+.sht-hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.stat-pill svg {
+  color: #fbbc04;
+}
+
+.sht-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.btn-outline-white {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+}
+
+.sht-glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* 2. Logo Strip */
+.sht-logo-strip {
+  padding: 40px 0;
+  border-y: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.eyebrow {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.sht-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.sht-logos span {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 1px;
+}
+
+/* 3. About */
+.sht-about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .sht-about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.sht-about-text h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.sht-about-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sht-about-img img {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 4. Instructor */
+.sht-instructor-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .sht-instructor-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.instructor-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+}
+
+.inst-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0066ff, #8a2be2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 auto 20px;
+}
+
+.instructor-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.inst-role {
+  color: #00d4ff;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.inst-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.inst-tags span {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 5. Curriculum */
+.sht-curriculum-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .sht-curriculum-container {
+    grid-template-columns: 350px 1fr;
+  }
+}
+
+.sht-curr-sidebar {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sht-curr-tab {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sht-curr-tab:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.sht-curr-tab.active {
+  background: rgba(0, 102, 255, 0.1);
+  border-left: 4px solid #0066ff;
+}
+
+.tab-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.tab-title {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.sht-curr-content {
+  padding: 40px;
+}
+
+.curr-panel-header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.curr-panel-header h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.curr-meta {
+  color: #00d4ff;
+  font-weight: 600;
+}
+
+.curr-bullets {
+  list-style: none;
+  padding: 0;
+}
+
+.curr-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.curr-bullets li svg {
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+/* 6. Case Studies */
+.sht-case-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .sht-case-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.case-card {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.case-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 102, 255, 0.3);
+}
+
+.case-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.case-card h3 {
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+/* 7. Audience & Outcomes */
+.sht-dual-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+}
+
+@media (min-width: 1024px) {
+  .sht-dual-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.audience-section h2, .outcomes-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.audience-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.aud-card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.aud-card h4 {
+  font-size: 1.1rem;
+  color: #fbbc04;
+  margin-bottom: 8px;
+}
+
+.aud-card p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.sht-outcome-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.out-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(0, 102, 255, 0.05);
+  border: 1px solid rgba(0, 102, 255, 0.2);
+  padding: 24px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.out-item svg {
+  color: #00d4ff;
+}
+
+/* 8. Market Stats */
+.sht-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+@media (min-width: 1024px) {
+  .sht-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px 20px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.stat-box h3 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fbbc04;
+  margin-bottom: 12px;
+}
+
+.stat-box p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sht-career-box {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 50px;
+}
+
+.salary-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.s-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.s-bar-row .role {
+  width: 150px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.bar-wrapper {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  height: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.fill-1 { background: linear-gradient(90deg, #0066ff, #00d4ff); }
+.fill-2 { background: linear-gradient(90deg, #8a2be2, #d896ff); }
+.fill-3 { background: linear-gradient(90deg, #fbbc04, #ff8c00); }
+
+/* 9. Reasons */
+.sht-reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.reason-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+}
+
+.r-num {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.reason-card h4 {
+  font-size: 1.1rem;
+}
+
+/* 10. Pricing */
+.sht-bg-pricing {
+  background: linear-gradient(135deg, #0a0f1a, #05070a);
+}
+
+.sht-pricing-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .sht-pricing-layout {
+    grid-template-columns: 1fr 400px;
+  }
+}
+
+.sht-pricing-info h2 {
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+}
+
+.pricing-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-bullets li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.pricing-bullets li svg {
+  color: #00d4ff;
+}
+
+.sht-steps h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 102, 255, 0.1);
+  border: 1px solid #0066ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: #00d4ff;
+}
+
+.step-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.sht-pricing-card {
+  background: rgba(20, 25, 35, 0.9);
+  border: 1px solid rgba(0, 102, 255, 0.3);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.sht-pricing-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.price-block {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.new-price {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.price-block .old-price {
+  font-size: 1.2rem;
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.payment-terms {
+  text-align: center;
+  color: #fbbc04;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.includes-list p {
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.includes-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.includes-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.includes-list li svg {
+  color: #00d4ff;
+}
+
+/* 11. Final CTA */
+.sht-final-cta {
+  padding: 100px 0;
+  background: url('https://placehold.co/1920x400/111/111') center/cover;
+  position: relative;
+}
+
+.sht-final-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 102, 255, 0.8), rgba(138, 43, 226, 0.8));
+  backdrop-filter: blur(5px);
+}
+
+.sht-final-cta .container-premium {
+  position: relative;
+  z-index: 10;
+}
+
+.sht-final-cta h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+.sht-final-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .s-bar-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

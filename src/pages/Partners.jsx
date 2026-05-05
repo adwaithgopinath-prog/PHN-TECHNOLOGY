@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, ArrowRight, X, ExternalLink, Award, Globe, Building2, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import './Partners.css';
+import './partners.css';
 
 const partnersData = [
   {
