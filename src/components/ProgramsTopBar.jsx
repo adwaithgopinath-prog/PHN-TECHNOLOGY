@@ -54,10 +54,12 @@ const ProgramsTopBar = () => {
       icon: <BookOpen size={18} />,
       items: [
         { name: 'All Workshops', path: '/programs/workshops' },
+        { name: 'IIT / NIT / IIIT', path: '/programs/workshop/institute' },
+        { name: 'University', path: '/programs/workshop/university' },
         { name: 'Robotics Workshop', path: '/programs/workshops/robotics' },
-        { name: 'AI Workshop', path: '/programs/workshops/ai' },
-        { name: 'IoT Workshop', path: '/programs/workshops/iot' }
+        { name: 'AI Workshop', path: '/programs/workshops/ai' }
       ]
+
     },
     { label: 'Masterclass', path: '/programs/masterclasses', icon: <GraduationCap size={18} /> },
     { 

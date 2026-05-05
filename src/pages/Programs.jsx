@@ -15,13 +15,22 @@ const Programs = () => {
 
   const pathways = [
     {
-      title: 'Hands-On Workshops',
+      title: 'IIT / NIT / IIIT Workshops',
       icon: <Zap size={32} />,
-      desc: 'Short practical sessions for students to explore robotics, AI, IoT, coding, and innovation.',
-      label: 'For Schools & Colleges',
-      link: '/programs/workshops',
+      desc: 'Advanced technical sessions for premier national institutes focusing on high-end robotics and AI.',
+      label: 'For Premier Institutes',
+      link: '/programs/workshop/institute',
       color: 'blue'
     },
+    {
+      title: 'University Workshops',
+      icon: <BookOpen size={32} />,
+      desc: 'Industry-ready skill development programs for engineering universities and technical colleges.',
+      label: 'For Universities',
+      link: '/programs/workshop/university',
+      color: 'purple'
+    },
+
     {
       title: 'Expert-Led Masterclasses',
       icon: <MonitorPlay size={32} />,
