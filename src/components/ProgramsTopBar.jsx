@@ -53,10 +53,10 @@ const ProgramsTopBar = () => {
       path: '/programs/workshops', 
       icon: <BookOpen size={18} />,
       items: [
-        { name: 'All Workshops', path: '/programs/workshops' },
         { name: 'IIT / NIT / IIIT', path: '/programs/workshop/institute' },
         { name: 'University', path: '/programs/workshop/university' }
       ]
+
 
 
     },

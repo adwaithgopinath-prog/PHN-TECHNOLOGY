@@ -16,7 +16,11 @@ import Programs from './pages/Programs';
 import IPP from './pages/IPP';
 import ProgramsTopBar from './components/ProgramsTopBar';
 import PartnersSection from './components/PartnersSection';
-import WorkshopPage from './pages/WorkshopPage';
+
+import InstituteWorkshop from './pages/InstituteWorkshop';
+import UniversityWorkshop from './pages/UniversityWorkshop';
+
+
 
 
 import { advisoryBoardData } from './data/advisoryBoard';
@@ -75,10 +79,10 @@ const GlobalNavbar = () => {
         {name: 'Programs Overview', path: '/programs'}, 
         {name: 'IIT / NIT / IIIT Workshop', path: '/programs/workshop/institute'}, 
         {name: 'University Workshop', path: '/programs/workshop/university'}, 
-        {name: 'Workshops', path: '/programs/workshops'}, 
         {name: 'Masterclasses', path: '/programs/masterclasses'}, 
         {name: 'Internships', path: '/programs/internships'}, 
         {name: 'Summer Internship', path: '/programs/summer-internship'}
+
 
       ] 
     },
@@ -535,9 +539,10 @@ const App = () => {
             <Route path="/skillhub" element={<div className="pt-32 text-center text-3xl">PHN Skillhub (New)</div>} />
             <Route path="/programs" element={<Programs />} />
             <Route path="/programs/ipp" element={<IPP />} />
-            <Route path="/programs/workshop/institute" element={<WorkshopPage />} />
-            <Route path="/programs/workshop/university" element={<WorkshopPage />} />
+            <Route path="/programs/workshop/institute" element={<InstituteWorkshop />} />
+            <Route path="/programs/workshop/university" element={<UniversityWorkshop />} />
             <Route path="/programs/*" element={<Programs />} />
+
 
             <Route path="/career" element={<div className="pt-32 text-center text-3xl">Career</div>} />
             <Route path="/contact" element={<div className="pt-32 text-center text-3xl">Contact Us</div>} />
