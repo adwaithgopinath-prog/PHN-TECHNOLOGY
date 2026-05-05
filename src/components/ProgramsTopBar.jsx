@@ -55,10 +55,9 @@ const ProgramsTopBar = () => {
       items: [
         { name: 'All Workshops', path: '/programs/workshops' },
         { name: 'IIT / NIT / IIIT', path: '/programs/workshop/institute' },
-        { name: 'University', path: '/programs/workshop/university' },
-        { name: 'Robotics Workshop', path: '/programs/workshops/robotics' },
-        { name: 'AI Workshop', path: '/programs/workshops/ai' }
+        { name: 'University', path: '/programs/workshop/university' }
       ]
+
 
     },
     { label: 'Masterclass', path: '/programs/masterclasses', icon: <GraduationCap size={18} /> },
