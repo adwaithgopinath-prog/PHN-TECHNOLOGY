@@ -591,25 +591,19 @@
 
 .portal-ring {
   position: absolute;
-  inset: 0;
-  border: 2px dashed #0ea5e9;
+  inset: -10px;
+  border: 2px solid rgba(14, 165, 233, 0.1);
   border-radius: 50%;
-  opacity: 0;
-  display: none;
 }
 
 .bridge-arrow-large {
   position: relative;
-  width: 120px;
-  height: 80px;
-  background: white;
-  border-radius: 100px;
+  width: 100%;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2);
   z-index: 2;
-  overflow: hidden;
 }
 
 .path-dots {
@@ -628,21 +622,58 @@
 
 .bridge-label {
   margin-top: 25px;
-  font-weight: 950;
-  font-size: 1.4rem;
+  font-weight: 900;
+  font-size: 1.15rem; /* Larger and more intentional */
   color: #0ea5e9;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   text-align: center;
+  opacity: 0.9;
+}
+
+.bridge-connector-animated {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, #0ea5e9 0, #0ea5e9 6px, transparent 6px, transparent 12px);
+  background-size: 24px 100%;
+  animation: moveDots 0.8s linear infinite;
+  border-radius: 2px;
+}
+
+.bridge-arrow-head {
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid #0ea5e9;
+}
+
+@keyframes moveDots {
+  from { background-position: 0 0; }
+  to { background-position: 24px 0; }
 }
 
 /* Chips */
+.transformation-skills-block {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
 .transformation-chips-row {
   display: flex;
   justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
-  margin-bottom: 50px;
+  width: 100%; /* Match width */
 }
 
 .transformation-chip {
@@ -695,8 +726,9 @@
   padding: 25px 40px;
   border-radius: 25px;
   box-shadow: 0 5px 25px rgba(0,0,0,0.03);
-  max-width: 900px;
+  width: 100%; /* Align width */
   margin: 0 auto;
+  border: 1px solid #f1f5f9;
 }
 
 .impact-label {
@@ -757,12 +789,14 @@
   gap: 30px;
   position: relative;
   z-index: 2;
+  align-items: stretch;
 }
 
 .adventure-stop {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 .stop-number {
@@ -788,6 +822,10 @@
   text-align: center;
   transition: all 0.4s;
   border: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
 }
 
 .adventure-card:hover {
@@ -816,7 +854,8 @@
   font-size: 0.95rem;
   color: #64748b;
   line-height: 1.5;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  flex-grow: 1;
 }
 
 .outcome-tag {
@@ -824,6 +863,7 @@
   background: #f8fafc;
   padding: 8px 12px;
   border-radius: 12px;
+  margin-top: auto;
 }
 
 /* 3. Explore Tiles */
@@ -881,6 +921,9 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.03);
   text-align: center;
   transition: all 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .benefit-premium-card:hover {
@@ -903,6 +946,7 @@
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
+  margin-top: 8px; /* Added gap from icon */
   margin-bottom: 15px;
 }
 

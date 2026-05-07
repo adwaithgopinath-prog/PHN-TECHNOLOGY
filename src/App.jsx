@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { 
   ChevronDown, ArrowRight, ArrowUp, Menu, X, MapPin, Mail, 
-  PlayCircle, Award, BookOpen, Building2, GraduationCap, Globe 
+  PlayCircle, Award, BookOpen, Building2, GraduationCap, Globe,
+  Users, School, UserCheck, TrendingUp
 } from 'lucide-react';
 
 import JobTrainingPopup from './components/JobTrainingPopup';
@@ -39,6 +40,7 @@ import OnlineSummerInternship from './pages/OnlineSummerInternship';
 import OfflineSummerInternship from './pages/OfflineSummerInternship';
 
 import { advisoryBoardData } from './data/advisoryBoard';
+import { newsData } from './data/newsData';
 import './GlobalDesign.css';
 
 // --- Shared Logos ---
@@ -75,7 +77,12 @@ const GlobalNavbar = () => {
   const navItems = [
     { label: 'Services', items: [{name: 'School Solution', path: '/schoolsolution'}, {name: 'College Solution', path: '/collegesolution'}, {name: 'Robotics Development', path: '/roboticsdevelopment'}, {name: 'IT Development', path: '/itdevelopment'}, {name: 'Products', path: '/products'}] },
     { label: 'Our Company', items: [{name: 'About Us', path: '/about'}, {name: 'Partners & Collaboration', path: '/partners'}, {name: 'Advisory Board', path: '/advisory-board'}] },
-    { label: 'Media', items: [{name: 'Latest News', path: '/news'}, {name: 'Gallery', path: '/gallery'}] },
+    { label: 'Media', items: [
+      {name: 'Latest News', path: '/news'}, 
+      {name: 'Gallery', path: '/gallery'},
+      {name: 'Testimonials', path: '/testimonials'},
+      {name: 'Industrial Visits', path: '/industrial-visits'}
+    ] },
     { label: 'PHN Skillhub', path: '/phn-skillhub', badge: 'New' },
     { label: 'Programs', path: '/programs' },
     { label: 'Career', path: '/career' },
@@ -152,14 +159,11 @@ const HeroSection = () => (
       >
         <div className="hero-ctas">
           <a href="#partners" className="btn-premium btn-primary">KNOW MORE</a>
+          <a href="https://www.youtube.com/watch?v=7g8hTFcW-4A" target="_blank" rel="noopener noreferrer" className="btn-premium btn-youtube">
+            <YoutubeIcon /> WATCH VIDEO
+          </a>
         </div>
       </motion.div>
-    </div>
-    
-    <div className="hero-yt-float">
-      <a href="https://www.youtube.com/watch?v=7g8hTFcW-4A" target="_blank" rel="noopener noreferrer" className="yt-icon-btn">
-        <YoutubeIcon />
-      </a>
     </div>
 
     <div className="hero-scroll-indicator">
@@ -168,41 +172,80 @@ const HeroSection = () => (
   </section>
 );
 
-const ImpactStats = () => (
-  <section className="impact-stats-band">
-    <div className="container-premium">
-      <div className="stats-grid">
-        {[
-          { num: '8L+', label: 'Students Trained' },
-          { num: '2500+', label: 'Schools Associated' },
-          { num: '300+', label: 'Expert Trainers' },
-          { num: '12+', label: 'Years of Innovation' }
-        ].map((s, i) => (
-          <motion.div 
-            key={i} 
-            className="stat-card-glass"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+const ImpactStats = () => {
+  const stats = [
+    { num: '8', suffix: 'L+', label: 'STUDENTS TRAINED', icon: <Users size={22} />, color: '#0066ff' },
+    { num: '2500', suffix: '+', label: 'SCHOOLS ASSOCIATED', icon: <School size={22} />, color: '#fbb700' },
+    { num: '300', suffix: '+', label: 'EXPERT TRAINERS', icon: <UserCheck size={22} />, color: '#00d4ff' },
+    { num: '12', suffix: '+', label: 'YEARS OF INNOVATION', icon: <TrendingUp size={22} />, color: '#ff3366' }
+  ];
+
+  return (
+    <section className="impact-stats-band">
+      <div className="container-premium">
+        <div className="section-header-compact">
+          <motion.span 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
+            className="label-pill"
           >
-            <div className="stat-num">{s.num}</div>
-            <div className="stat-label">{s.label}</div>
-          </motion.div>
-        ))}
+            Our Impact
+          </motion.span>
+          <motion.h2 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="section-title-global"
+          >
+            Trusted across learners, institutions, and innovation ecosystems.
+          </motion.h2>
+        </div>
+
+        <div className="stats-grid-refined">
+          {stats.map((s, i) => (
+            <motion.div 
+              key={i} 
+              className="stat-card-compact-3d"
+              style={{ 
+                '--card-accent-color': s.color,
+                '--card-accent-glow': `${s.color}25`
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+            >
+              <div className="stat-card-accent"></div>
+              <div className="stat-flex-row">
+                <div className="stat-icon-mini" style={{ color: s.color, backgroundColor: `${s.color}15` }}>
+                  {s.icon}
+                </div>
+                <div className="stat-info-group">
+                  <div className="stat-num-compact">
+                    {s.num}{s.suffix}
+                  </div>
+                  <div className="stat-label-compact">{s.label}</div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const SolutionsSection = () => (
   <section className="section-full bg-deep">
     <div className="container-premium">
       <div className="section-header-center">
-        <span className="label-small">OUR SOLUTIONS</span>
+        <span className="label-pill">OUR SOLUTIONS</span>
         <h2 className="section-title-global">Digital Transformation for All</h2>
+        <p className="section-subtitle">Scalable education, robotics, and technology solutions designed for institutions and industry.</p>
       </div>
-      <div className="services-grid">
+      <div className="solutions-grid-premium">
         {[
           { title: 'School Solution', path: '/schoolsolution', icon: <GraduationCap />, desc: 'Modernizing K-12 education with Robotics & AI labs.' },
           { title: 'College Solution', path: '/collegesolution', icon: <Building2 />, desc: 'Bridging the industry-academia gap with CoE labs.' },
@@ -221,36 +264,75 @@ const SolutionsSection = () => (
   </section>
 );
 
-const WhatIsHappening = () => (
-  <section className="section-full bg-alt">
-    <div className="container-premium">
-      <div className="flex justify-between items-end mb-12">
-        <div>
-          <span className="label-small">NEWS & EVENTS</span>
-          <h2 className="section-title-global mb-0">What's Happening at PHN?</h2>
-        </div>
-        <Link to="/news" className="btn-premium btn-glass">VIEW ALL NEWS</Link>
-      </div>
-      <div className="news-carousel">
-        {[
-          { title: 'New MoU with IIT Jammu', date: 'Oct 2023', img: '/assets/news-wss.png', desc: 'Strategic collaboration for advanced robotics development.' },
-          { title: 'Regional Office at IIT Delhi', date: 'Sep 2023', img: '/assets/news-delhi.png', desc: 'Expanding our reach to the national capital.' },
-          { title: 'Innovation Summit 2024', date: 'Aug 2023', img: '/assets/news-vadodara.png', desc: 'Preparing for the largest tech fest in Western India.' }
-        ].map((news, i) => (
-          <div key={i} className="news-card-compact">
-            <div className="news-img"><img src={news.img} alt={news.title} /></div>
-            <div className="news-info">
-              <span className="event-date-chip">{news.date}</span>
-              <h4>{news.title}</h4>
-              <p>{news.desc}</p>
-              <Link to="/news" className="read-more-link">READ STORY <ArrowRight size={14}/></Link>
-            </div>
+const WhatIsHappening = () => {
+  const hpNews = newsData.slice(0, 3);
+  
+  return (
+    <section className="section-full bg-alt">
+      <div className="container-premium">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16">
+          <div>
+            <span className="label-pill">Latest News</span>
+            <h2 className="section-title-global mt-4 mb-0">What's Happening?</h2>
+            <p className="text-white/50 mt-4 max-w-xl">Recent collaborations and milestones from PHN Technology.</p>
           </div>
-        ))}
+          <Link to="/news" className="btn-premium btn-glass group">
+            VIEW ALL NEWS <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+
+        <div className="hp-news-curated">
+          {/* Featured on Left */}
+          <motion.div 
+            className="curated-featured-card group cursor-pointer"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <Link to="/news" className="block h-full">
+              <div className="hp-news-img h-[300px] md:h-[400px]">
+                <img src={hpNews[0].image} alt={hpNews[0].title} />
+              </div>
+              <div className="hp-news-info">
+                <span className="pill-small">{hpNews[0].category}</span>
+                <h4>{hpNews[0].title}</h4>
+                <p>{hpNews[0].summary}</p>
+                <div className="hp-read-more">Read Story <ArrowRight size={14}/></div>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* Side Stack on Right */}
+          <div className="curated-side-stack">
+            {hpNews.slice(1, 3).map((news, i) => (
+              <motion.div 
+                key={i}
+                className="curated-compact-item group"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <Link to="/news" className="flex gap-4 w-full">
+                  <div className="news-img-mini">
+                    <img src={news.image} alt={news.title} />
+                  </div>
+                  <div className="news-compact-info">
+                    <span className="pill-small">{news.category}</span>
+                    <h4 className="text-white group-hover:text-blue-400 transition-colors text-base line-clamp-2">
+                      {news.title}
+                    </h4>
+                    <span className="text-white/30 text-xs font-bold">{news.date}</span>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const NetworkStrip = () => (
   <section id="partners" className="py-20 bg-deep border-b border-white/5">

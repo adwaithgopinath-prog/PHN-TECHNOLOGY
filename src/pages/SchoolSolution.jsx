@@ -252,16 +252,13 @@ const SchoolSolution = () => {
               <div className="bridge-portal">
                 <motion.div 
                   className="portal-ring"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                  animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 ></motion.div>
                 <div className="bridge-arrow-large">
-                  <motion.div 
-                    className="path-dots"
-                    animate={{ x: [0, 100], opacity: [0, 1, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                  ></motion.div>
-                  <ArrowRight size={60} className="bridge-icon" />
+                  <div className="bridge-connector-animated">
+                    <div className="bridge-arrow-head"></div>
+                  </div>
                 </div>
                 <div className="bridge-label">PHN TRANSFORMATION</div>
               </div>
@@ -288,45 +285,48 @@ const SchoolSolution = () => {
             </motion.div>
           </div>
 
-          {/* Transformation Chips */}
-          <div className="transformation-chips-row">
-            {[
-              { text: 'Passion', color: '#0ea5e9', tooltip: 'Discovering inner potential' },
-              { text: 'Creativity', color: '#f43f5e', tooltip: 'Unlocking original thinking' },
-              { text: 'Innovation', color: '#facc15', tooltip: 'Building future solutions' },
-              { text: 'Real-World Learning', color: '#10b981', tooltip: 'Industry-level exposure' }
-            ].map((chip, i) => (
-              <motion.div 
-                key={i} 
-                className="transformation-chip" 
-                style={{ '--chip-color': chip.color }}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 + (i * 0.1) }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <span className="chip-text">{chip.text}</span>
-                <div className="chip-tooltip">{chip.tooltip}</div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Impact Strip */}
-          <div className="impact-strip-container">
-            <div className="impact-label">Students learn to:</div>
-            <div className="impact-items">
+          {/* Aligned Skills & Impact Block */}
+          <div className="transformation-skills-block">
+            {/* Transformation Chips */}
+            <div className="transformation-chips-row">
               {[
-                { icon: <Brain size={20} />, text: 'Think' },
-                { icon: <Wrench size={20} />, text: 'Build' },
-                { icon: <Zap size={20} />, text: 'Experiment' },
-                { icon: <Presentation size={20} />, text: 'Present' }
-              ].map((item, i) => (
-                <div key={i} className="impact-item">
-                  <span className="impact-icon">{item.icon}</span>
-                  <span className="impact-text">{item.text}</span>
-                </div>
+                { text: 'Passion', color: '#0ea5e9', tooltip: 'Discovering inner potential' },
+                { text: 'Creativity', color: '#f43f5e', tooltip: 'Unlocking original thinking' },
+                { text: 'Innovation', color: '#facc15', tooltip: 'Building future solutions' },
+                { text: 'Real-World Learning', color: '#10b981', tooltip: 'Industry-level exposure' }
+              ].map((chip, i) => (
+                <motion.div 
+                  key={i} 
+                  className="transformation-chip" 
+                  style={{ '--chip-color': chip.color }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 + (i * 0.1) }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <span className="chip-text">{chip.text}</span>
+                  <div className="chip-tooltip">{chip.tooltip}</div>
+                </motion.div>
               ))}
+            </div>
+
+            {/* Impact Strip */}
+            <div className="impact-strip-container">
+              <div className="impact-label">Students learn to:</div>
+              <div className="impact-items">
+                {[
+                  { icon: <Brain size={20} />, text: 'Think' },
+                  { icon: <Wrench size={20} />, text: 'Build' },
+                  { icon: <Zap size={20} />, text: 'Experiment' },
+                  { icon: <Presentation size={20} />, text: 'Present' }
+                ].map((item, i) => (
+                  <div key={i} className="impact-item">
+                    <span className="impact-icon">{item.icon}</span>
+                    <span className="impact-text">{item.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
